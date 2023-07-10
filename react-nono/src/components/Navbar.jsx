@@ -7,26 +7,24 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-
   return (
     <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
       <h1 className='w-full text-3xl font-bold text-[#00df9a] cursor-pointer'>NonoCode</h1>
       <ul className='hidden md:flex'>
-        <li className='p-4 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>Home</li>
-        <li className='p-4 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>Services</li>
-        <li className='p-4 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>About</li>
-        <li className='p-4 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>Contact</li>
+        <li className='hover-nav'><a href="#Home">Home</a></li>
+        <li className='hover-nav'><a href="#Services">Services</a></li>
+        <li className='hover-nav'><a href="#About">About</a></li>
+        <li className='hover-nav'><a href="#Contact">Contact</a></li>
       </ul>
       <div onClick={handleNav} className='block md:hidden'>
-          {nav ? <AiOutlineClose size={20} className='cursor-pointer'/> : <AiOutlineMenu size={20} className='cursor-pointer'/>}
+          {nav ? <AiOutlineClose size={30} className='cursor-pointer fixed top-4 right-4 backdrop-blur'/> : <AiOutlineMenu size={30} className='cursor-pointer fixed top-4 right-4 backdrop-blur'/>}
       </div>
       <ul className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}>
         <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>NonoCode</h1>
-          <li className='p-4 border-b border-gray-600 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>Home</li>
-          <li className='p-4 border-b border-gray-600 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>Company</li>
-          <li className='p-4 border-b border-gray-600 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>About</li>
-          <li className='p-4 border-b border-gray-600 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>Contact</li>
-          <li className='p-4 transition-all hover:text-[#00df9a] hover:font-bold cursor-pointer'>Contact</li>
+          <li className='hover-nav border-b border-gray-600'><a href="#Home">Home</a></li>
+          <li className='hover-nav border-b border-gray-600'><a href="#Services">Services</a></li>
+          <li className='hover-nav border-b border-gray-600'><a href="#About">About</a></li>
+          <li className='hover-nav'><a href="#Contact">Contact</a></li>
       </ul>
     </div>
   );
